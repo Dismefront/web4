@@ -1,0 +1,123 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 60px;
+}
+
+.lg-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@media (max-height: 650px) {
+
+    .lg-wrapper {
+        align-items: flex-start;
+    }
+
+}
+
+#welcome-back {
+    font-family: pricedown;
+    font-size: 45px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+    -webkit-text-stroke: 2px #000;
+}
+
+#welcome-new {
+    font-family: pricedown;
+    font-size: 45px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+    -webkit-text-stroke: 2px #000;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 300px;
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+
+}
+
+button[name="logIn"],
+button[name="register"] {
+    transition: background-color 0.2s;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button[name="register"]:hover {
+    background-color: #1b7ccb;
+}
+
+button[name="logIn"]:hover {
+    background-color: #459c48;
+}
+
+button[name="logIn"] {
+    background-color: #4CAF50;
+}
+
+button[name="register"] {
+    background-color: #2196F3;
+}
+
+#have-account,
+#no-account {
+    font-size: 14px;
+    text-align: center;
+    font-family: sans-serif;
+    margin-top: 10px;
+}
+
+.signinglink:link {
+    text-decoration: none;
+    color: blue;
+}
+
+.signinglink:visited {
+    text-decoration: none;
+    color: blue;
+}
+
+.signinglink:hover {
+    text-decoration: underline;
+}
+
+.signinglink:active {
+    text-decoration: underline;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+}

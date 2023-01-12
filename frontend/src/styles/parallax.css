@@ -1,0 +1,63 @@
+.parallax {
+    position: relative;
+}
+
+.layers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    margin-top: 60px;
+}
+
+.layer {
+    position: absolute;
+    height: 100%;
+}
+
+.layer img {
+    height: 100%;
+    width: 100%;
+}
+
+.layer_2 {
+    z-index: 2;
+    transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+
+.layer_1 {
+    z-index: 1;
+    background-color: #1f1f1f;
+    transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+}
+
+.vignette {
+    z-index: 4;
+    transform: translate3d(0, calc(var(--scrollTop) / 3), 0);
+}
+
+.header {
+    font-family: pricedown;
+    font-size: 100px;
+    z-index: 3;
+    color: white;
+    text-align: center;
+    -webkit-text-stroke: 3px black;
+    letter-spacing: -2px;
+}
+
+@media (max-width: 800px), (max-height: 500px) { /* 736px - width of the image layer1 */
+    .layers {
+        height: 100%;
+    }
+
+    .header {
+        scale: 0.7;
+    }
+
+    .header .initials {
+        display: table-caption;
+    }
+}

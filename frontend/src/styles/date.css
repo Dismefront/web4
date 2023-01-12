@@ -1,0 +1,32 @@
+.divider {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(221, 140, 19);
+    background-image: url('../imgs/star.svg');
+    background-size: auto 30px;
+    opacity: 0.5;
+}
+
+.current-date {
+    color: white;
+    font-family: beckett;
+    text-align: center;
+}
+
+@media (min-width: 1228px) {
+    .current-date {
+        font-size: 100px;
+    }
+}
+
+@media (min-width: 836px) and (max-width: 1228px) {
+    .current-date {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 835px) {
+    .current-date {
+        font-size: 60px;
+    }
+}

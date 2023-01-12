@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: pricedown;
+    src: url("../fonts/pricedown.otf");
+}
+
+@font-face {
+    font-family: beckett;
+    src: url("../fonts/Beckett.ttf");
+}
+
+body {
+    background-image: url("../imgs/background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}

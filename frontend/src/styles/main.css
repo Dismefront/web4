@@ -1,0 +1,252 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-container {
+    color: white;
+    width: 1228px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0 10px 10px 10px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.result-table {
+    width: 100%;
+    display: flex;
+    overflow-y: scroll;
+    justify-content: center;
+    order: 3;
+    height: 538px;
+    margin-bottom: 20px;
+}
+
+.result-table::-webkit-scrollbar {
+    width: 5px;
+    background-color: #000000;
+    border-radius: 10px;
+}
+
+.result-table::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+#tb-result {
+    width: 80%;
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    max-height: 40px;
+}
+
+#tb-result,
+#tb-result th,
+#tb-result td {
+    border-collapse: collapse;
+    border: 2px solid white;
+    padding: 10px;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 48%;
+    padding-left: 20px;
+    order: 1;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 48%;
+    padding-right: 20px;
+    order: 2;
+}
+
+.right-side p {
+    width: 300px;
+    text-align: center;
+}
+
+.send button {
+    padding: 10px;
+    margin: 0 10px 10px 0;
+    border-radius: 10px;
+    font-family: beckett;
+    font-weight: 1000;
+    font-size: 25px;
+    min-width: 100px;
+    max-height: 50px;
+}
+
+#applybtn {
+    background-color: coral;
+    transition: 0.4s;
+}
+
+#clearbtn {
+    background-color: chocolate;
+    transition: 0.4s;
+}
+
+#applybtn:hover {
+    background-color: rgb(205, 101, 63);
+    color: white;
+}
+
+#clearbtn:hover {
+    background-color: rgb(182, 90, 24);
+    color: white;
+}
+
+@media (min-width: 836px) and (max-width: 1248px) {
+
+    .wrapper {
+        align-items: flex-start;
+    }
+
+    .main-container {
+        flex-direction: column-reverse;
+        width: 816px;
+        align-items: center;
+    }
+
+    .left-side {
+        padding-left: 0;
+        order: 2;
+    }
+
+    .right-side {
+        padding-right: 0;
+        order: 3;
+        align-items: center;
+    }
+
+    .result-table {
+        order: 1;
+    }
+
+}
+
+@media (max-width: 836px) {
+
+    .wrapper {
+        align-items: flex-start;
+    }
+
+    .main-container {
+        flex-direction: column-reverse;
+        width: 600px;
+        align-items: center;
+    }
+
+    .result-table {
+        order: 1;
+    }
+
+    .left-side {
+        padding-left: 0;
+        order: 2;
+    }
+
+    .right-side {
+        padding-right: 0;
+        order: 3;
+        align-items: center;
+    }
+
+}
+
+@media (max-height: 1000px) {
+
+    .wrapper {
+        align-items: flex-start;
+    }
+
+}
+
+.choose-title {
+    font-family: beckett;
+    font-size: 30px;
+}
+
+.choose-from {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.choose-from.ballas,
+.choose-from.groovest,
+.main-container Input {
+    margin-top: -5px;
+}
+
+.main-container div {
+    margin-top: 10px;
+}
+
+.choose-from button {
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 50%;
+    font-weight: 1000;
+    font-family: beckett;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.ballas button:hover {
+    background-color: rgb(121, 0, 177);
+    color: white;
+}
+
+.groovest button:hover {
+    background-color: rgb(0, 90, 8);
+    color: white;
+}
+
+.toggled1 {
+    background-color: rgb(121, 0, 177);
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.8);
+    color: white;
+}
+
+.toggled2 {
+    background-color: rgb(0, 90, 8);
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.8);
+    color: white;
+}
+
+.main-container input {
+    border-radius: 5px;
+    transition: 0.2s;
+    height: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: sans-serif;
+    font-weight: 600;
+    border: none;
+    color: black;
+}
+
+.main-container input:focus {
+    outline: none;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.8);
+    background-color: darkblue;
+    color: white;
+}

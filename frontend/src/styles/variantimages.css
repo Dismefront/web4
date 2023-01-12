@@ -1,0 +1,10 @@
+.varimgs {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.varimgs img {
+    width: 80vw;
+    border-radius: 10px;
+    border: 2px solid aqua;
+}
