@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -50,9 +52,9 @@ public class ApplicationController {
 
     @PostMapping("/try")
     @CrossOrigin(origins = "http://localhost:3000")
-    public ResponseEntity<Attempt> tryAttempt(
+    public ResponseEntity<Collection<Attempt>> tryAttempts(
             @RequestHeader("Authorization") String jwt,
-            @RequestBody AttemptTry attemptTry
+            @RequestBody Collection<AttemptTry> attemptTries
     ) {
         Long start = System.currentTimeMillis();
         String email = getUsernameFromJWT(jwt.substring(7));
@@ -61,19 +63,29 @@ public class ApplicationController {
         User user = userRepository.findByEmail(email);
         if (user == null)
             return ResponseEntity.status(HttpStatus.LOCKED).build(); // 423
+        ArrayList<Attempt> response = new ArrayList<>();
+        for (AttemptTry Try : attemptTries) {
+            tryAttempt(Try, user, start, response);
+        }
+        return ResponseEntity.ok(response);
+    }
+
+    public void tryAttempt(AttemptTry attemptTry, User user, Long start, ArrayList<Attempt> response) {
         if (!attemptTry.validateParams())
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            return;
         Boolean result = attemptTry.getResult();
         Attempt attempt = new Attempt();
-        attempt.setIssuedDate(new Date());
+
+        SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy hh:mm a");
+        attempt.setIssuedDate(format.format(new Date()));
         attempt.setOwner(user);
         attempt.setR(attemptTry.getR());
         attempt.setX(attemptTry.getX());
         attempt.setY(attemptTry.getY());
         attempt.setResult(result);
-        attempt.setExecutionTime(start - System.currentTimeMillis());
+        attempt.setExecutionTime(System.currentTimeMillis() - start);
         attemptsRepository.save(attempt);
-        return ResponseEntity.ok(attempt);
+        response.add(attempt);
     }
 
 }

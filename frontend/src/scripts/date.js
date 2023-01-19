@@ -10,8 +10,10 @@ function curDate() {
             intervalID = setInterval(curDate, 1000);
     }
     else {
-        if (intervalID)
-            clearInterval(curDate);
+        if (intervalID) {
+            clearInterval(intervalID);
+            intervalID = undefined;
+        }
     }
 }
 

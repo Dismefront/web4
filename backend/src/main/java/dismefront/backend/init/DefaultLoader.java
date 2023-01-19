@@ -37,7 +37,7 @@ public class DefaultLoader {
                 .roles(List.of(standardRole, adminRole, superAdminRole))
                 .build();
 
-        Attempt attempt = new Attempt(null, 1.0, 2.0, 3.0, true, new Date(), 100l, user);
+        Attempt attempt = new Attempt(null, 1.0, 2.0, 3.0, true, "00:00 Jesus time", 100l, user);
 
         userRepository.save(user);
         attemptsRepository.save(attempt);

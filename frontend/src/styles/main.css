@@ -49,11 +49,33 @@
 }
 
 #tb-result,
-#tb-result th,
-#tb-result td {
+#tb-result thead th,
+#tb-result thead td,
+#tb-result tbody th,
+#tb-result tbody td {
     border-collapse: collapse;
     border: 2px solid white;
     padding: 10px;
+}
+
+.coordth {
+    width: 100px;
+}
+
+.idth {
+    width: 50px;
+}
+
+.resth {
+    width: 100px;
+}
+
+.rth {
+    width: 30px;
+}
+
+.exth {
+    width: 20%;
 }
 
 .left-side {

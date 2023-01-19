@@ -30,7 +30,7 @@ public class Attempt {
 
     private Boolean result;
 
-    private Date issuedDate;
+    private String issuedDate;
     private Long executionTime;
 
     @JsonIgnore

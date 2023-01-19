@@ -10,14 +10,22 @@ import lombok.NoArgsConstructor;
 public class AttemptTry {
 
     public boolean getResult() {
+        boolean flag = false;
         if (r < 0) {
             x = -x;
             y = -y;
             r = -r;
+            flag = true;
         }
-        return (x <= 0 && y >= 0 && x * x + y * y <= r * r)
+        boolean result = (x <= 0 && y >= 0 && x * x + y * y <= r * r)
                 || (x >= 0 && y >= 0 && x + y <= r / 2)
                 || (x >= 0 && y <= 0 && -r <= y && x <= r / 2.0);
+        if (flag) {
+            x = -x;
+            y = -y;
+            r = -r;
+        }
+        return result;
     }
 
     private static boolean isInteger(Double variable) {
